@@ -196,8 +196,9 @@ module RQRCode #:nodoc:
 
       @data                 = string
 
-      options[:mode] ||= :byte_8bit
-      mode = QRMODE_NAME[(options[:mode]).to_sym]
+      if options[:mode] != ''
+        mode = QRMODE_NAME[(options[:mode]).to_sym] 
+      end
       # If mode is not explicitely given choose mode according to data type
       mode ||= case
         when RQRCode::QRNumeric.valid_data?(@data)
