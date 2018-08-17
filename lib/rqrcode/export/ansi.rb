@@ -13,10 +13,10 @@ module RQRCode
       #
       def as_ansi(options={})
         options = {
-          light: "\033[47m",
-          dark: "\033[40m",
-          fill_character: '  ',
-          quiet_zone_size: 4
+          :light => "\033[47m",
+          :dark => "\033[40m",
+          :fill_character => '  ',
+          :quiet_zone_size => 4
         }.merge(options)
 
         normal = "\033[m"
